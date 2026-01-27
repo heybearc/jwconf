@@ -42,3 +42,4 @@ coverage/
 # Personal notes
 notes.txt
 TODO.txt
+.windsurf/workflows/*.md
