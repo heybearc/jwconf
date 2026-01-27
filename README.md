@@ -19,12 +19,14 @@ This is an **unofficial community project**. We are not affiliated with JW Conf 
 
 📖 [Documentation](patches/audio-sharing-macos/README.md) | ⬇️ [Download Installer](installers/macos/INSTALL.sh)
 
-### 🔧 Windows Audio Dropout (Under Investigation)
-**Status**: Investigating  
+### ✅ Windows Audio Dropout Fix
+**Status**: Fix Available  
 **Issue**: Audio drops out during meetings, requires toggling noise suppression to fix  
+**Solution**: Disable Automatic Gain Control (AGC) in audio settings  
 **Platforms**: Windows 10/11  
+**Version**: Identified in v2025.9.1
 
-🔍 [Help us debug](https://github.com/heybearc/jwconf/issues) - Run diagnostic tools and share results
+� [Quick Fix Guide](docs/TROUBLESHOOTING_GUIDE.md#audio-dropout-quick-fixes) | 🔍 [Technical Details](docs/TROUBLESHOOTING_GUIDE.md#automatic-gain-control-agc-conflict)
 
 ### 🔧 Permission State Bug (Under Investigation)
 **Status**: Investigating  
@@ -46,8 +48,14 @@ bash install.sh
 
 Or download manually from [installers/macos/](installers/macos/)
 
-#### Windows Fixes
-Coming soon - currently under investigation
+#### Windows Audio Dropout Fix
+**Quick Fix** (No installation needed):
+1. Open JW Conf and join a meeting
+2. Click Settings (gear icon) → Audio
+3. Enable "Disable automatic microphone gain control"
+4. Test your microphone
+
+This setting persists across sessions. See [Troubleshooting Guide](docs/TROUBLESHOOTING_GUIDE.md#audio-dropout-quick-fixes) for details.
 
 ### For Developers
 

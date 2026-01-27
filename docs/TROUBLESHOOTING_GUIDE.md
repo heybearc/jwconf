@@ -23,22 +23,30 @@
 ### Audio Dropout Issue
 
 **Likely Causes**:
-1. **WebRTC Audio Track State Corruption**
+1. **Automatic Gain Control (AGC) Conflict** ⭐ **PRIMARY CAUSE on Windows**
+   - WebRTC AGC conflicts with Windows audio driver AGC
+   - Causes audio to "pump" or cut out intermittently
+   - Default setting (`disableAGC: false`) enables WebRTC AGC
+   - **Fix**: Enable "Disable automatic microphone gain control" in settings
+   - Affects many Windows 10/11 systems with modern audio drivers
+   - Setting persists in localStorage (`persist:root` key)
+
+2. **WebRTC Audio Track State Corruption**
    - Audio track gets into invalid state
    - Not properly released/reacquired
    - State machine bug in Jitsi
 
-2. **Audio Device Switching**
+3. **Audio Device Switching**
    - Windows audio device changes (Bluetooth, USB headset)
    - App doesn't handle device change gracefully
    - Audio context not properly recreated
 
-3. **Noise Suppression Module Crash**
+4. **Noise Suppression Module Crash**
    - Audio processing pipeline fails
    - Toggling noise suppression forces recreation
    - WebAudio processing node issue
 
-4. **Room State Synchronization**
+5. **Room State Synchronization**
    - Breakout room transition doesn't properly sync audio state
    - Server-side state vs client-side state mismatch
    - Rejoining forces state resync
@@ -214,6 +222,17 @@ console.log('Storage cleared - please refresh');
 ## Quick Fixes for Users
 
 ### Audio Dropout Quick Fixes
+
+**Method 0: Disable Automatic Gain Control (RECOMMENDED for Windows)**
+1. Click Settings (gear icon)
+2. Go to Audio settings
+3. Find "Disable automatic microphone gain control" (may be in German: "Automatische Mikrofonlautstärkeregelung deaktivieren")
+4. **Enable this setting** (check the box)
+5. Test microphone
+
+> **Why this works**: Windows audio drivers often conflict with WebRTC's Automatic Gain Control (AGC), causing audio to cut out or "pump" during meetings. Disabling AGC lets Windows handle gain control natively, which is more stable. This setting is stored in your app's localStorage and persists across sessions.
+>
+> **Technical details**: The app uses `redux-persist` to store this as `disableAGC: true` in the `persist:root` key at `%APPDATA%\JW Conf\Local Storage\leveldb\`. Default is `false` (AGC enabled), which causes issues on many Windows systems.
 
 **Method 1: Toggle Noise Suppression**
 1. Click Settings (gear icon)
