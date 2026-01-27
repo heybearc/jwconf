@@ -29,11 +29,23 @@ REM Check if Node.js is installed
 where node >nul 2>&1
 if %errorLevel% neq 0 (
     echo.
+    echo ========================================
     echo ERROR: Node.js is not installed
+    echo ========================================
     echo.
-    echo Please install Node.js from: https://nodejs.org/
-    echo Then run this script again.
+    echo You need to install Node.js first (one-time setup).
     echo.
+    echo QUICK STEPS:
+    echo 1. Go to: https://nodejs.org/
+    echo 2. Click the green "Download" button
+    echo 3. Install the downloaded file
+    echo 4. RESTART YOUR COMPUTER (important!)
+    echo 5. Run this script again
+    echo.
+    echo For detailed instructions, open:
+    echo INSTALL-NODEJS-FIRST.txt
+    echo.
+    echo ========================================
     pause
     exit /b 1
 )

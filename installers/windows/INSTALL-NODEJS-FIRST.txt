@@ -1,0 +1,93 @@
+========================================
+INSTALL NODE.JS FIRST - STEP BY STEP
+========================================
+
+You need to install Node.js before running the patch installer.
+This is a one-time setup that takes about 5 minutes.
+
+STEP 1: DOWNLOAD NODE.JS
+-------------------------
+1. Open your web browser (Chrome, Edge, Firefox, etc.)
+2. Go to: https://nodejs.org/
+3. You'll see a green button that says "Download Node.js (LTS)"
+4. Click that green button
+5. Wait for the file to download (it's about 30 MB)
+6. The file will be named something like: node-v20.11.0-x64.msi
+
+STEP 2: INSTALL NODE.JS
+-----------------------
+1. Find the downloaded file (usually in your Downloads folder)
+2. Double-click the file to run it
+3. Click "Next" on the welcome screen
+4. Click "I accept" on the license agreement
+5. Click "Next" to install in the default location
+6. Click "Next" to install default features
+7. Click "Next" again (you can skip the optional tools)
+8. Click "Install"
+9. Wait for it to install (about 1 minute)
+10. Click "Finish"
+
+STEP 3: RESTART YOUR COMPUTER
+------------------------------
+This is IMPORTANT! Node.js won't work until you restart.
+
+1. Close all programs
+2. Click Start menu
+3. Click Power
+4. Click Restart
+5. Wait for computer to restart
+
+STEP 4: VERIFY IT WORKED
+-------------------------
+After your computer restarts:
+
+1. Press Windows key + R
+2. Type: cmd
+3. Press Enter
+4. In the black window that opens, type: node --version
+5. Press Enter
+
+You should see something like: v20.11.0
+
+If you see that, Node.js is installed correctly!
+
+STEP 5: NOW RUN THE PATCH INSTALLER
+------------------------------------
+1. Find the file: INSTALL-PATCHES.bat
+2. Right-click on it
+3. Click "Run as administrator"
+4. Click "Yes" when Windows asks
+5. Follow the prompts
+
+========================================
+
+TROUBLESHOOTING:
+
+Problem: "I don't see the green download button"
+Solution: Make sure you're on nodejs.org (not a different website)
+
+Problem: "The installer won't run"
+Solution: Make sure you downloaded the Windows version (.msi file)
+
+Problem: "After restart, 'node --version' still says not found"
+Solution: 
+- Make sure you actually restarted (not just logged out)
+- Try opening a NEW command prompt window
+- If still not working, reinstall Node.js
+
+Problem: "I'm not sure if I have Node.js already"
+Solution: 
+- Press Windows key + R
+- Type: cmd
+- Press Enter
+- Type: node --version
+- If you see a version number, you already have it!
+
+========================================
+
+Need more help? 
+- Take a screenshot of the error
+- Send it to me
+- I'll help you figure it out
+
+========================================
