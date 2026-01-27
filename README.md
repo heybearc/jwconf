@@ -24,14 +24,14 @@ This is an **unofficial community project**. We are not affiliated with JW Conf 
 **Issue**: Audio drops out during meetings, requires toggling noise suppression to fix  
 **Platforms**: Windows 10/11  
 
-🔍 [Help us debug](https://github.com/heybearc/jwconf-community-fixes/issues) - Run diagnostic tools and share results
+🔍 [Help us debug](https://github.com/heybearc/jwconf/issues) - Run diagnostic tools and share results
 
 ### 🔧 Permission State Bug (Under Investigation)
 **Status**: Investigating  
 **Issue**: Users get "Moderator has blocked this feature" error incorrectly  
 **Platforms**: Windows, macOS  
 
-🔍 [Help us debug](https://github.com/heybearc/jwconf-community-fixes/issues) - Run diagnostic tools and share results
+🔍 [Help us debug](https://github.com/heybearc/jwconf/issues) - Run diagnostic tools and share results
 
 ## 🚀 Quick Start
 
@@ -40,7 +40,7 @@ This is an **unofficial community project**. We are not affiliated with JW Conf 
 #### macOS Audio Fix
 ```bash
 # Download and run installer
-curl -L https://raw.githubusercontent.com/heybearc/jwconf-community-fixes/main/installers/macos/INSTALL.sh -o install.sh
+curl -L https://raw.githubusercontent.com/heybearc/jwconf/main/installers/macos/INSTALL.sh -o install.sh
 bash install.sh
 ```
 
@@ -53,8 +53,8 @@ Coming soon - currently under investigation
 
 ```bash
 # Clone repository
-git clone https://github.com/heybearc/jwconf-community-fixes.git
-cd jwconf-community-fixes
+git clone https://github.com/heybearc/jwconf.git
+cd jwconf
 
 # Apply a patch manually
 cd patches/audio-sharing-macos
@@ -154,8 +154,8 @@ This project maintains the same license as JW Conf and Jitsi Meet Electron, allo
 
 ## 🔗 Links
 
-- **Issues**: [Report bugs or request features](https://github.com/heybearc/jwconf-community-fixes/issues)
-- **Discussions**: [Ask questions or share ideas](https://github.com/heybearc/jwconf-community-fixes/discussions)
+- **Issues**: [Report bugs or request features](https://github.com/heybearc/jwconf/issues)
+- **Discussions**: [Ask questions or share ideas](https://github.com/heybearc/jwconf/discussions)
 - **JW Conf**: [https://jwconf.com](https://jwconf.com)
 - **Jitsi**: [https://jitsi.org](https://jitsi.org)
 
