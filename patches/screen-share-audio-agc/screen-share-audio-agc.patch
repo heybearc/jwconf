@@ -1,0 +1,33 @@
+--- a/node_modules/@jitsi/electron-sdk/screensharing/main.js
++++ b/node_modules/@jitsi/electron-sdk/screensharing/main.js
+@@ -127,10 +127,22 @@
+                     break;
+                 }
+ 
+                 const constraints = {
+                     video: data.source
+                 };
+ 
+                 if (data.screenShareAudio) {
+-                    // TODO: maybe make this configurable somehow in case
+-                    // someone wants to use `loopbackWithMute`?
+-                    constraints.audio = 'loopback';
++                    // Disable audio processing for screen share to prevent pumping
++                    // Windows AGC conflicts with loopback audio causing volume fluctuations
++                    constraints.audio = {
++                        mandatory: {
++                            chromeMediaSource: 'desktop',
++                            chromeMediaSourceId: data.source.id
++                        },
++                        optional: [
++                            { autoGainControl: false },
++                            { noiseSuppression: false },
++                            { echoCancellation: false },
++                            { googAutoGainControl: false },
++                            { googNoiseSuppression: false },
++                            { googEchoCancellation: false }
++                        ]
++                    };
+                 }
+ 
+                 callback(constraints);
