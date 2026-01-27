@@ -1,0 +1,12 @@
+--- a/node_modules/@jitsi/electron-sdk/screensharing/main.js
++++ b/node_modules/@jitsi/electron-sdk/screensharing/main.js
+@@ -133,7 +133,8 @@ class ScreenShareMainHook {
+                 };
+ 
+                 // Setting `audio` to `undefined` throws an exception.
+-                if (data.screenShareAudio) {
++                // Force enable audio sharing on macOS since the UI doesn't show the checkbox
++                if (data.screenShareAudio || isMac()) {
+                     // TODO: maybe make this configurable somehow in case
+                     // someone wants to use `loopbackWithMute`?
+                     constraints.audio = 'loopback';
