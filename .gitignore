@@ -31,6 +31,9 @@ dist/
 build/
 *.asar
 
+# Local reverse-engineering / extracted app bundles (do not commit)
+analysis/
+
 # Test files
 coverage/
 .nyc_output/
@@ -43,3 +46,9 @@ coverage/
 notes.txt
 TODO.txt
 .windsurf/workflows/*.md
+
+# Windows installer binaries (too large for git)
+*.exe
+
+# Release builds
+releases/
