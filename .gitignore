@@ -45,7 +45,13 @@ coverage/
 # Personal notes
 notes.txt
 TODO.txt
-.windsurf/workflows/*.md
+.windsurf/workflows/*
+.windsurf/rules/*
+.windsurf/skills/*
+.cursor/commands/*
+.cursor/rules/*
+.cursor/skills/*
+.cursor/mcp.json
 
 # Windows installer binaries (too large for git)
 *.exe
